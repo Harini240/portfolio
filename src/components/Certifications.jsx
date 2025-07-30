@@ -4,7 +4,7 @@ import './Certifications.css';
 const Certifications = () => {
   return (
     <div className="certifications-section">
-      <h1>Certifications</h1>
+      <h1><strong>Certifications</strong></h1>
       <ul>
         <li>Introduction to Industry 4.0 – NPTEL (Apr 2025)</li>
         <li>Social Networks – NPTEL (Apr 2025)</li>
