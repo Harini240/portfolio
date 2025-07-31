@@ -1,8 +1,8 @@
+// server/index.js
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-require('dotenv').config(); // Load environment variables
 
 const app = express();
 app.use(cors());
@@ -14,17 +14,16 @@ app.post('/send-email', async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'harini200524@gmail.com',   // Your Gmail address
-      pass: 'klui sali mgwh lrrz',   // Your Gmail App Password
+      user: 'harini200524@gmail.com',        
+      pass: 'klui sali mgwh lrrz',          
     },
   });
 
   const mailOptions = {
-    from: 'Portfolio Contact Form <' + process.env.EMAIL_USER + '>',
-    to: process.env.EMAIL_USER, // Send to yourself
-    subject: `New message from ${name}`,
-    text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    replyTo: email, // Lets you reply directly to the sender
+    from: email,
+    to: 'harini200524@gmail.com',           
+    subject: `Message from ${name}`,
+    text: message,
   };
 
   try {
