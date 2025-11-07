@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
-  // React state for form inputs
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -11,8 +10,10 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = { name, email, message };
+    // const formData = { name, email, message };
 
+    // 🔻 Commented out the email sending part
+    /*
     try {
       const response = await fetch('http://localhost:5000/send-email', {
         method: 'POST',
@@ -23,7 +24,6 @@ const Contact = () => {
       const result = await response.json();
       if (result.success) {
         alert('Message sent!');
-        // Clear form
         setName('');
         setEmail('');
         setMessage('');
@@ -34,6 +34,13 @@ const Contact = () => {
       console.error(err);
       alert('Error sending message');
     }
+    */
+
+    // ✅ Temporary message just to confirm form works
+    alert('Message sending feature is currently disabled.');
+    setName('');
+    setEmail('');
+    setMessage('');
   };
 
   return (
@@ -45,7 +52,11 @@ const Contact = () => {
           <p><strong>Name:</strong> Harini Rayappan</p>
           <p><strong>Email:</strong> harini200524@gmail.com</p>
           <p><strong>Phone:</strong> +91-9344240544</p>
-          <p><strong>Linkedin:</strong><a href='https://www.linkedin.com/in/harini-r-84a30325a/'>www.linkedin.com/in/harini-r-2401-2k5</a></p>
+          <p><strong>Linkedin:</strong> 
+            <a href='https://www.linkedin.com/in/harini-r-84a30325a/'>
+              www.linkedin.com/in/harini-r-2401-2k5
+            </a>
+          </p>
           <p><strong>Location:</strong> No. 6, Opposite Sub-Collector Bungalow, Hosur, Krishnagiri, Tamil Nadu, India</p>
         </div>
         <div className="contact-form">
@@ -78,7 +89,6 @@ const Contact = () => {
             <button type="submit">Send Message</button>
           </form>
         </div>
-        
       </div>
     </section>
   );
